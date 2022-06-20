@@ -6,7 +6,6 @@ const server = http.createServer((req, res) => {
   switch (req.url) {
     case '/':
       res.write('<script src="web-storage.js"></script>');
-      res.end('hi');
       break;
     case '/web-storage.js':
       res.end(jsContent);

@@ -1,6 +1,6 @@
 'use strict';
-const now = Date.now();
-const key = 'last_access';
+const now = "programming";
+const key = 'favorite';
 localStorage.setItem(key, now);
 const value = localStorage.getItem(key);
-console.log(value);
+console.log(key);
