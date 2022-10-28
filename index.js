@@ -2,8 +2,9 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
   const now = Date.now();
+  const expiresDate = new Date(now + 30 * 86400 * 1000); // 86400 = 60(秒) * 60(分) * 24(時間)
   res.setHeader('Content-Type', 'text/plain;charset=utf-8');
-  res.setHeader('Set-Cookie', `last_access=${now};`);
+  res.setHeader('Set-Cookie', `last_access=${now};expires=${expiresDate.toUTCString()};`);
   const last_access_time = req.headers.cookie ? parseInt(req.headers.cookie.split('last_access=')[1]) : now;
   res.end(new Date(last_access_time).toString());
 });
