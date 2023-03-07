@@ -3,7 +3,7 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   const now = Date.now();
   res.setHeader('Content-Type', 'text/plain;charset=utf-8');
-  res.setHeader('Set-Cookie', `last_access=${now};`);
+  res.setHeader('Set-Cookie', `last_access=${now};expires=Thu, 06 Apr 2023 00:00:00 GMT`);
   const last_access_time = req.headers.cookie ? parseInt(req.headers.cookie.split('last_access=')[1]) : now;
   res.end(new Date(last_access_time).toString());
 });
