@@ -1,6 +1,6 @@
 services:
   app:
-    image: node:22.22.0
+    image: node:22.22.0-slim
     tty: true
     ports:
       - 8000:8000
